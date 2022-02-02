@@ -77,4 +77,5 @@ describe("test like a suppose mr. Martin do into book pg 5", function(){
 
 works but still have to get same return of function to test pass.
 
-## How to start
+### MyStep: try save result to a file 
+https://stackoverflow.com/questions/2496710/writing-files-in-node-js

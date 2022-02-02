@@ -44,8 +44,8 @@ function PrintStatement(invoice, plays){
 }
 
 function loadFile(filename){
-    console.log(`loading ${filename}`);
     const fs = require('fs');
+    console.log(`loading ${filename}`);
     let rawdata = fs.readFileSync(filename);
     return JSON.parse(rawdata);
 }
