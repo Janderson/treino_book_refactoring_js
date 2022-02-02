@@ -2,5 +2,16 @@
   "name": "treino_book_refactoring_js",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "global": "^4.4.0",
+    "mocha": "^9.2.0"
+  },
+  "scripts": {
+    "test": "mocha --required esm",
+    ".": "node index.js"
+  },
+  "devDependencies": {
+    "esm": "^3.2.25"
+  }
 }
