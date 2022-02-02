@@ -17,11 +17,28 @@ function statement(invoice, plays){
                 }
                 break;
             
-                // print line for this order
-                result+= ` ${play.name}: ${format(thisAmount/100)} (${perf.audience} seats)\n`
-                totalAmount += thisAmount;
+            case "comedy":
+                thisAmount = 30000;
+                if (perf.audience > 20) {
+                    thisAmount += 10000 + 500 * (perf.audience - 20);
+                }
+                thisAmount+= 300 * perf.audience;
+                break;
+            default:
+                throw new Error(`unknow type ${play.type}`);
         }
+
+        // add volume credits
+        volumeCredits += Math.max(perf.audience - 30, 0);
+        // add extra credit for every ten comedy attendees
+        if ("comedy" === play.type) volumeCredits += Math.floor(perf.audience / 5);
+
+        // print line for this order
+        result+= ` ${play.name}: ${format(thisAmount/100)} (${perf.audience} seats)\n`
+        totalAmount += thisAmount;
     }
+    result += `Amount owed is ${format(totalAmount/100)}\n`
+    result += `You earned ${volumeCredits} credits\n`
     return result;                                         
 }
 
@@ -35,9 +52,7 @@ function loadFile(filename){
 function exec(){
     console.log("start")
     let plays = loadFile('plays.json');
-    console.log(plays);
     let invoices = loadFile('invoices.json');
-    console.log(invoices);
     console.log("\n\n\n----------- STATEMENTS -----------\n");
     console.log(statement(invoices[0], plays));
 }
