@@ -2,22 +2,20 @@
 
 v1_original - Chapter 1 - pg.3
 
-Refactoring useds
+## Refactoring useds
 
-Extract Function (106)
-Inline Variable (123)
-Change Function Declaration (124)
-Split Phase(154)
-Replace Temp with Query(178)
-Move Function (198)
-Slide Statements (223)
-Split Loop (227)
-Replace Loop with Pipeline (231)
+Extract Function (106)  
+Inline Variable (123)  
+Change Function Declaration (124)  
+Split Phase(154)  
+Replace Temp with Query(178)  
+Move Function (198)  
+Slide Statements (223)  
+Split Loop (227)  
+Replace Loop with Pipeline (231)  
 
 
-Chapter 1 - Steps
-
-## The First Step in Refactoring - Add a test
+## Chapter 1 - Steps: The First Step in Refactoring - Add a test
 
 ### MyStep: install mocha
 > yarn install mocha
