@@ -1,6 +1,6 @@
 
 
-function PrintStatement(invoice, plays){
+function statement(invoice, plays){
     let totalAmount = 0;
     let volumeCredits = 0;
     let result = `Statement for ${invoice.customer}\n`;
@@ -53,7 +53,7 @@ function loadFile(filename){
 function exec(){
     let plays = loadFile('plays.json');
     let invoices = loadFile('invoices.json');
-    return PrintStatement(invoices[0], plays);
+    return statement(invoices[0], plays);
 }
 
 // function exported to test
