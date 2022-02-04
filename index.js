@@ -4,17 +4,15 @@ function statement(invoice, plays){
     let totalAmount = 0;
     let volumeCredits = 0;
     let result = `Statement for ${invoice.customer}\n`;
-    const format = new Intl.NumberFormat("en-US", 
-                                         {style: "currency", currency: "USD", MinimumFractionDigits: 2}).format;
     for (let perf of invoice.performances){
         thisAmount = AmountFor(plays, perf);
 
         volumeCredits+= volumeCreditsFor(plays, perf)
         // print line for this order
-        result+= ` ${PlayFor(plays, perf).name}: ${format(thisAmount/100)} (${perf.audience} seats)\n`
+        result+= ` ${PlayFor(plays, perf).name}: ${usd(thisAmount/100)} (${perf.audience} seats)\n`
         totalAmount += thisAmount;
     }
-    result += `Amount owed is ${format(totalAmount/100)}\n`
+    result += `Amount owed is ${usd(totalAmount/100)}\n`
     result += `You earned ${volumeCredits} credits\n`
     return result;                                         
 }
@@ -52,6 +50,13 @@ function volumeCreditsFor(plays, aPerformance){
         result += Math.floor(aPerformance.audience / 5);
     }
     return result;
+}
+
+function usd(aNumber) {
+    params = {style: "currency", 
+              currency: "USD", 
+              MinimumFractionDigits: 2}
+    return new Intl.NumberFormat("en-US", params).format(aNumber);
 }
 
 function loadFile(filename){
