@@ -26,7 +26,7 @@ function PlayFor(plays, aPerformance) {
     return plays[aPerformance.playID];
 }
 
-function AmountFor(plays, aPerformance, play){
+function AmountFor(plays, aPerformance){
     let result = 0;
     switch(PlayFor(plays, aPerformance).type){
         case "tragedy":
@@ -44,7 +44,7 @@ function AmountFor(plays, aPerformance, play){
             result+= 300 * aPerformance.audience;
             break;
         default:
-            throw new Error(`unknow type ${play.type}`);
+            throw new Error(`unknow type ${PlayFor(plays, aPerformance).type}`);
     }
     return result;
 }
