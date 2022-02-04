@@ -8,11 +8,8 @@ function statement(invoice, plays){
                                          {style: "currency", currency: "USD", MinimumFractionDigits: 2}).format;
     for (let perf of invoice.performances){
         thisAmount = AmountFor(plays, perf);
-        // add volume credits
-        volumeCredits += Math.max(perf.audience - 30, 0);
-        // add extra credit for every ten comedy attendees
-        if ("comedy" === PlayFor(plays, perf).type) volumeCredits += Math.floor(perf.audience / 5);
 
+        volumeCredits+= volumeCreditsFor(plays, perf)
         // print line for this order
         result+= ` ${PlayFor(plays, perf).name}: ${format(thisAmount/100)} (${perf.audience} seats)\n`
         totalAmount += thisAmount;
@@ -45,6 +42,14 @@ function AmountFor(plays, aPerformance){
             break;
         default:
             throw new Error(`unknow type ${PlayFor(plays, aPerformance).type}`);
+    }
+    return result;
+}
+
+function volumeCreditsFor(plays, aPerformance){
+    let result = Math.max(aPerformance.audience - 30, 0);
+    if ("comedy" === PlayFor(plays, aPerformance).type) {
+        result += Math.floor(aPerformance.audience / 5);
     }
     return result;
 }
