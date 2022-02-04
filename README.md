@@ -17,7 +17,7 @@ Replace Loop with Pipeline (231)
 
 Chapter 1 - Steps
 
-## The First Step in Refactoring - Add a test
+## BookStep: The First Step in Refactoring - Add a test
 
 ### MyStep: install mocha
 > yarn install mocha
@@ -79,3 +79,25 @@ works but still have to get same return of function to test pass.
 
 ### MyStep: try save result to a file 
 https://stackoverflow.com/questions/2496710/writing-files-in-node-js
+
+done! work like a charm
+
+
+## BookStep: Decompsing the statement Function
+Extract Function (106)
+done!
+
+## BookStep: Removing the play variable (pg. 10)
+Replace Temp with Query (178)
+
+something strange I needed to pass plays to playFor
+Inline Variable (123)
+
+Change Function Declaration (124)
+
+
+## BookStep: Removing the format Variable (pg 16)
+Change Function Declaration (124)
+
+## BookStep: Removing Total Volume Credits (pg 18)
+
