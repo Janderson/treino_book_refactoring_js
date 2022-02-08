@@ -2,23 +2,27 @@
 
 function statement(invoice, plays){
     let totalAmount = 0;
-    let volumeCredits = 0;
     let result = `Statement for ${invoice.customer}\n`;
     for (let perf of invoice.performances){
-        thisAmount = AmountFor(plays, perf);
-
-        volumeCredits+= volumeCreditsFor(plays, perf)
         // print line for this order
-        result+= ` ${PlayFor(plays, perf).name}: ${usd(thisAmount/100)} (${perf.audience} seats)\n`
-        totalAmount += thisAmount;
+        result+= ` ${PlayFor(plays, perf).name}: ${usd(AmountFor(plays, perf)/100)} (${perf.audience} seats)\n`
+        totalAmount += AmountFor(plays, perf);
     }
     result += `Amount owed is ${usd(totalAmount/100)}\n`
-    result += `You earned ${volumeCredits} credits\n`
+    result += `You earned ${totalVolumeCredits(invoice, plays)} credits\n`
     return result;                                         
 }
 
 function PlayFor(plays, aPerformance) {
     return plays[aPerformance.playID];
+}
+
+function totalVolumeCredits(invoice, plays){
+    let result = 0;
+    for (let perf of invoice.performances){
+        result+= volumeCreditsFor(plays, perf)
+    }
+    return result;
 }
 
 function AmountFor(plays, aPerformance){
