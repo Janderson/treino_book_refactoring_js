@@ -8,11 +8,6 @@ function statement(invoice, plays){
         result+= ` ${PlayFor(plays, perf).name}: ${usd(AmountFor(plays, perf)/100)} (${perf.audience} seats)\n`
         totalAmount += AmountFor(plays, perf);
     }
-
-    let volumeCredits = 0;
-    for (let perf of invoice.performances){
-        volumeCredits+= volumeCreditsFor(plays, perf)
-    }
     result += `Amount owed is ${usd(totalAmount/100)}\n`
     result += `You earned ${totalVolumeCredits(invoice, plays)} credits\n`
     return result;                                         
@@ -20,14 +15,6 @@ function statement(invoice, plays){
 
 function PlayFor(plays, aPerformance) {
     return plays[aPerformance.playID];
-}
-
-function totalVolumeCredits(invoice, plays){
-    let result = 0;
-    for (let perf of invoice.performances){
-        result+= volumeCreditsFor(plays, perf)
-    }
-    return result;
 }
 
 function AmountFor(plays, aPerformance){
@@ -49,6 +36,14 @@ function AmountFor(plays, aPerformance){
             break;
         default:
             throw new Error(`unknow type ${PlayFor(plays, aPerformance).type}`);
+    }
+    return result;
+}
+
+function totalVolumeCredits(invoice, plays){
+    let result = 0;
+    for (let perf of invoice.performances){
+        result+= volumeCreditsFor(plays, perf)
     }
     return result;
 }
