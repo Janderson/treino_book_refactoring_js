@@ -101,3 +101,13 @@ Change Function Declaration (124)
 
 ## BookStep: Removing Total Volume Credits (pg 18)
 
+I saw i made a Mistake, to go back my modification, I use 
+> git reset HEAD~1
+to go back to last modification, what I learn:
+Even with reset, i need to discard changes, git dont immediatly change file
+> cat .git/HEAD
+
+stop in pg 21
+
+resources:
+https://www.atlassian.com/git/tutorials/undoing-changes/git-reset
