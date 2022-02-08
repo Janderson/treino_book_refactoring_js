@@ -14,12 +14,20 @@ function statement(invoice, plays){
         volumeCredits+= volumeCreditsFor(plays, perf)
     }
     result += `Amount owed is ${usd(totalAmount/100)}\n`
-    result += `You earned ${volumeCredits} credits\n`
+    result += `You earned ${totalVolumeCredits(invoice, plays)} credits\n`
     return result;                                         
 }
 
 function PlayFor(plays, aPerformance) {
     return plays[aPerformance.playID];
+}
+
+function totalVolumeCredits(invoice, plays){
+    let result = 0;
+    for (let perf of invoice.performances){
+        result+= volumeCreditsFor(plays, perf)
+    }
+    return result;
 }
 
 function AmountFor(plays, aPerformance){
