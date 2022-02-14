@@ -5,3 +5,15 @@ Na master, deixei só o teste usando o mocha e o código original, sem refatora�
 
 
 **branch ch1_treino1** - primeira rodada de refatorações: https://github.com/Janderson/treino_book_refactoring_js/tree/ch1_treino1
+
+### instalação:
+> npm install 
+
+ou
+> yarn install
+
+### rodar o test:
+> npm run test
+
+ou
+> yarn test
