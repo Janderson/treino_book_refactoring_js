@@ -1,13 +1,5 @@
 default_owner = require("./defaultOwner_t1")
 
-let defaultOwner = {
-    firstName: "Martin",
-    lastName: "Fowler"}
-
-function getDefaultOwner(){
-    return defaultOwner;
-};
-
 function setDefaultValue(){
     default_owner.setDefaultOwner({
         firstName: "Martin",
@@ -21,9 +13,8 @@ function someModifier(){
 }
 
 function getterExample(){
-    return getDefaultOwner();
+    return default_owner.getDefaultOwner();
 }
-
 
 function run(){
     setDefaultValue();

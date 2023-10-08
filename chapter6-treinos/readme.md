@@ -50,5 +50,7 @@ So I can extract the first-phase code its own function, returning own data
 5. move getDefaultOwner + setDefaultOwner + default_onwer data inside
 6. make methods a module
 7. modify setDefaultOwner to default_owner module
+7. remove setDefaultOwner of original file
 7. modify getDefaultOwner to default_owner module
+7. remove getDefaultOwner+defaultOwner of original file
 
