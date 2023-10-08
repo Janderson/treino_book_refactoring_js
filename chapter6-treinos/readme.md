@@ -1,5 +1,17 @@
 So I can extract the first-phase code its own function, returning own data
 
+## Treino - split phase Steps
+
+1. extract function, second phase of code, new function ==> applyShipping
+2. create a itermidiate datastructure priceData
+3. move basePrice to priceData
+4. remove parameter basePrice of applyShipping
+5. repeat step 3+4 to discount
+6. repeat step 3+4 to quantity
+
+7. create own function calculatePriceData
+8. move logic to generate priceData to calculatePriceData
+9. remove old logic from priceOrder method
 
 ## Treino 2 - split phase
 
@@ -18,6 +30,6 @@ So I can extract the first-phase code its own function, returning own data
 5. repeat step 3+4 to discount [OK]
 6. repeat step 3+4 to quantity [OK]
 
-7. create own function calculatePriceData
-8. move logic to generate priceData to calculatePriceData
-9. remove old logic from priceOrder method
+7. create own function calculatePriceData [OK]
+8. move logic to generate priceData to calculatePriceData [OK]
+9. remove old logic from priceOrder method [OK]
