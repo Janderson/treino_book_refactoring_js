@@ -1,6 +1,8 @@
+# Treino - SPLIT PHASE
+## Treino - SPLIT PHASE - Explanation
 So I can extract the first-phase code its own function, returning own data
 
-## Treino - split phase Steps
+## Treino - SPLIT PHASE Steps
 
 1. extract function, second phase of code, new function ==> applyShipping
 2. create a itermidiate datastructure priceData
@@ -33,3 +35,20 @@ So I can extract the first-phase code its own function, returning own data
 7. create own function calculatePriceData [OK]
 8. move logic to generate priceData to calculatePriceData [OK]
 9. remove old logic from priceOrder method [OK]
+
+
+# Treino - Encapsulate Variable
+
+## Treino - Encapsulate Variable - Explanation
+
+
+## Treino - Encapsulate Variable - Steps
+1. create getDefaultOwner + setDefaultOwner ()
+2. modify setDefaultValue + someModifier to use setDefaultOwner ()
+3. modify getterExample to use getDefaultOwner
+4. create a default_owner.js 
+5. move getDefaultOwner + setDefaultOwner + default_onwer data inside
+6. make methods a module
+7. modify setDefaultOwner to default_owner module
+7. modify getDefaultOwner to default_owner module
+
