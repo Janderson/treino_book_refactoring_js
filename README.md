@@ -8,4 +8,4 @@
 [chapter6-split-phase](./chapter6-treinos/readme.md)
 
 ## Chapter 11 - Separate Query from Modifier
-[chapter11-Separate Query from Modifier](./chapter11-treinos/readme.md)
+[chapter11-Separate Query from Modifier](./chapter11-treinos/README.md)
