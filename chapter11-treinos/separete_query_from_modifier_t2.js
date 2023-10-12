@@ -14,13 +14,16 @@ function resetAlarms(){
 
 function alertForMiscreant (people){
     resetAlarms();
+    if (findMiscreant(people) !== "") setOffAlarms();
+}
+
+function findMiscreant(people){
+    resetAlarms();
     for (const p of people){
         if (p === "Don"){
-            setOffAlarms();
             return "Don";
         }
         if (p === "John"){
-            setOffAlarms();
             return "John";
         }
     }
@@ -28,6 +31,7 @@ function alertForMiscreant (people){
 }
 
 function run(people){
+    const found = findMiscreant(people);
     alertForMiscreant(people);
 }
 
