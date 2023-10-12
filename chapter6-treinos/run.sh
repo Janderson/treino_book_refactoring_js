@@ -1,1 +1,1 @@
-node encapsulate_variable_example1_original.js
+node split_phase_example1_t4.js
