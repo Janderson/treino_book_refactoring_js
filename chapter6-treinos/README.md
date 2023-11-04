@@ -34,12 +34,11 @@ Dados são mais dificeis de manipular do que funções, com funções eu consigo
 7. remove setDefaultOwner+getDefaultOwner funcition and defaultOwner data of original file [OK]
 
 
-# Treino - Introduce Parameter Object
+# Drill/Treino - Introduce Parameter Object
 
-## Treino - Introduce Parameter Object - Explanation
+## Drill/Treino - Introduce Parameter Object - Explanation
 
-
-## Treino - Introduce Parameter Object - Steps
+## Drill/Treino - Introduce Parameter Object - Steps
 1. declaring a class to combine data 
 2. CHANGE FUNCTION DECLARATION - to add new object  + add null to caller
 3. adjust caller to pass correct date range

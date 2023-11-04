@@ -7,5 +7,11 @@
 ## Chapter 6 - Split Phases
 [chapter6-split-phase](./chapter6-treinos/readme.md)
 
+## Chapter 6 - Introduce Parameter Object
+[chapter6-split-phase](./chapter6-treinos/readme.md)
+
+## Chapter 6 - Encapsulate Variable
+[chapter6-split-phase](./chapter6-treinos/readme.md)
+
 ## Chapter 11 - Separate Query from Modifier
 [chapter11-Separate Query from Modifier](./chapter11-treinos/README.md)

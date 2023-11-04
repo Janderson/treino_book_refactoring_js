@@ -1,1 +1,1 @@
-node encapsulate_variable_example1_t3.js
+node introduce_parameter_object_t2.js
