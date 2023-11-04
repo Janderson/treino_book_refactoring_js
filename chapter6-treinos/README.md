@@ -17,23 +17,21 @@ So I can extract the first-phase code its own function, returning own data
 
 
 
-# Treino - Encapsulate Variable
+# Drill Refactoring -  Encapsulate Variable
 
-## Treino - Encapsulate Variable - Explanation
+## Drill Refactoring - Encapsulate Variable - Explanation
+Dados são mais dificeis de manipular do que funções, com funções eu consigo mover chamadas enquanto chamo novas funções. Com dados eu não consigo fazer isso
 
 
-## Treino - Encapsulate Variable - Steps
-1. create getDefaultOwner + setDefaultOwner ()
-2. modify setDefaultValue + someModifier to use setDefaultOwner ()
-3. modify getterExample to use getDefaultOwner
-4. create a default_owner.js 
-5. move getDefaultOwner + setDefaultOwner + default_onwer data inside
-6. make methods a module
-7. modify setDefaultOwner to default_owner module
-7. remove setDefaultOwner of original file
-7. modify getDefaultOwner to default_owner module
-7. remove getDefaultOwner+defaultOwner of original file
-
+## Drill Refactoring - Encapsulate Variable - Steps
+1. create getDefaultOwner + setDefaultOwner [OK]
+2. modify setDefaultValue + someModifier to use setDefaultOwner [OK]
+3. modify getterExample to use getDefaultOwner [OK]
+4. create a default_owner_tX.js [OK]
+5. COPY getDefaultOwner + setDefaultOwner + default_onwer data inside [OK]
+6. make methods a module [OK]
+7. modify setDefaultOwner + getDefaultOwner to default_owner module [OK]
+7. remove setDefaultOwner+getDefaultOwner funcition and defaultOwner data of original file [OK]
 
 
 # Treino - Introduce Parameter Object
