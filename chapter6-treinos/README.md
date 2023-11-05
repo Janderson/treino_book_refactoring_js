@@ -45,3 +45,23 @@ Dados são mais dificeis de manipular do que funções, com funções eu consigo
 4. replace usage of parameters. start maximum
 5. replace usage of parameters. minimum
 6. add a method for a range if value falls within the range (method: contains)
+
+
+# Drill/Treino - Combine Func int Transform
+
+## Drill/Treino - Combine Func int Transform - Steps
+1. install lodash library
+2. create function enrichReading 
+3. modify client3 to use enrichReading
+4. create a variable baseCharge and move calculation calculateBaseCharge
+5. modify client3 to use new baseCharge Variable
+6. modify client1 call enrichReading
+7. modify client1 to use also baseCharge Variable
+8. modify client2 call enrichReading
+9. modify client2 to use also baseCharge Variable
+10. move taxableCharge calculation inside enrichReading
+11. modify client2 to use new taxableCharge of aReading
+
+## informations - Martin Fowler Patterns
+enrich ==> produce same thing with additional
+transform ==> produce something different
