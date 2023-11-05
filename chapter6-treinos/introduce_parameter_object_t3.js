@@ -1,4 +1,5 @@
 /*
+
 ## Drill/Treino - Introduce Parameter Object - Steps
 1. declaring a class to combine data [OK]
 2. R:CHANGE FUNCTION DECLARATION -  add new object of Range + add null to caller [OK]
@@ -8,6 +9,7 @@
 6. add a method for a range if value falls within the range (method: inside_range)
 7. modify readingsOutsideRange to remove old parameters
 */
+
 
 const station = {
     name: "ZB1",
@@ -20,16 +22,30 @@ const station = {
     ]
 }
 
-function readingsOutsideRange(station, min, max){
-    return station.readings
-        .filter(r => r.temp < min || r.temp > max);
+class NumberRange{
+    constructor(min, max){
+        this._data = {
+            "min": min,
+            "max": max
+        }
+    }
+    get min() {return this._data.min}
+    get max() {return this._data.max}
+    inside_range(value){
+        return (value >= this._data.min) && (value <= this._data.max);
+    }
+}
+
+function readingsOutsideRange(station, range){
+    return station.readings.filter(r => !range.inside_range(r.temp));
 }
 
 // run === caller
 function run(operationPlan){
+    const number_range = new NumberRange(operationPlan.tempertureFloor,
+                                         operationPlan.tempertureCeiling)
     alerts = readingsOutsideRange(station,
-                                  operationPlan.tempertureFloor,
-                                  operationPlan.tempertureCeiling);
+                                  number_range);
     return alerts;
 }
 

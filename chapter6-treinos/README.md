@@ -39,12 +39,13 @@ Dados são mais dificeis de manipular do que funções, com funções eu consigo
 ## Drill/Treino - Introduce Parameter Object - Explanation
 
 ## Drill/Treino - Introduce Parameter Object - Steps
-1. declaring a class to combine data 
-2. CHANGE FUNCTION DECLARATION - to add new object  + add null to caller
-3. adjust caller to pass correct date range
+1. declaring a class to combine data [OK]
+2. R:CHANGE FUNCTION DECLARATION -  add new object of Range + add null to caller [OK]
+3. adjust caller to pass correct date range [ok]
 4. replace usage of parameters. start maximum
 5. replace usage of parameters. minimum
-6. add a method for a range if value falls within the range (method: contains)
+6. add a method for a range if value falls within the range (method: inside_range)
+7. modify readingsOutsideRange to remove old parameters
 
 
 # Drill/Treino - Combine Func int Transform
