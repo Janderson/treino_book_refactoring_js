@@ -48,9 +48,9 @@ Dados são mais dificeis de manipular do que funções, com funções eu consigo
 7. modify readingsOutsideRange to remove old parameters
 
 
-# Drill/Treino - Combine Func's int Transform
+# Drill/Treino - Combine Func's into Transform
 
-## Drill/Treino - Combine Func's int Transform - Steps
+## Drill/Treino - Combine Func's into Transform - Steps
 1. install lodash library
 2. create function enrichReading 
 3. modify client3 to use enrichReading

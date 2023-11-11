@@ -1,24 +1,26 @@
 /*
 Steps
 
-1. install lodash library
-2. create function enrichReading 
-3. modify client3 to use enrichReading
-4. create a variable baseCharge and move calculation calculateBaseCharge
-5. modify client3 to use new baseCharge Variable
-6. modify client1 call enrichReading
-7. modify client1 to use also baseCharge Variable
-8. modify client2 call enrichReading
-9. modify client2 to use also baseCharge Variable
-10. move taxableCharge calculation inside enrichReading
-11. modify client2 to use new taxableCharge of aReading
+1. install lodash library [OK]
+2. create function enrichReading  [OK]
+3. modify client3 to use enrichReading [OK]
+4. create a variable baseCharge and move calculation calculateBaseCharge [OK]
+5. modify client3 to use new baseCharge Variable [OK]
+6. modify enrichReading.baseCharge to use round_2places [OK]
+7. modify client1 call enrichReading [OK]
+8. modify client1 to use also baseCharge Variable [OK]
+9. modify client2 call enrichReading [OK]
+10. modify client2 to use also baseCharge Variable [OK]
+11. move taxableCharge calculation inside enrichReading [OK]
+12. modify client2 to use new taxableCharge of aReading [OK]
 
 informations
 enrich ==> produce same thing with additional
 transform ==> produce something different
 
 */
-const _ = require("lodash")
+loadsh = require("loadsh")
+
 reading = {
     customer: "iva",
     quantity: 10,
@@ -26,21 +28,20 @@ reading = {
     year: 2017
 }
 
-function enrichReading(original){
-    const result = _.cloneDeep(original);
-    result.baseCharge = calculateBaseCharge(result);
-    result.taxableCharge = Math.max(0, result.baseCharge - taxThreshold(result.year));
-    return result;
-}
-
 function acquireReading(){
     return reading;
 }
+
+function enrichReading(raw_reading){
+    aReading = raw_reading;
+    aReading.baseCharge = round_2places(calculateBaseCharge(aReading));
+    aReading.taxableCharge = round_2places(Math.max(0, aReading.baseCharge - taxThreshold(aReading.year)));
+    return aReading;
+}
+
 function client1(){
-    const rawReading = acquireReading();
-    const aReading = enrichReading(rawReading);
-    const baseCharge = aReading.baseCharge;
-    return round_2places(baseCharge, 2);
+    aReading = enrichReading(acquireReading());
+    return aReading.baseCharge;
 }
 
 function round_2places(num){
@@ -48,17 +49,8 @@ function round_2places(num){
 }
 
 function client2(){
-    const rawReading = acquireReading();
-    const aReading = enrichReading(rawReading);
-    const taxableCharge = aReading.taxableCharge;
-    return round_2places(taxableCharge);
-}
-
-function client3(){
-    const rawReading = acquireReading();
-    const aReading = enrichReading(rawReading);
-    const basicChargeAmount = aReading.baseCharge;
-    return round_2places(basicChargeAmount);
+    const aReading = enrichReading(acquireReading());
+    return aReading.taxableCharge;
 }
 
 function baseRate(month, year){
@@ -69,6 +61,13 @@ function baseRate(month, year){
 function taxThreshold(year){
     // make it up
     return year/100;
+}
+
+function client3(){
+    const raw_reading = acquireReading();
+    aReading = enrichReading(raw_reading);
+    const basicChargeAmount = aReading.baseCharge;
+    return round_2places(basicChargeAmount);
 }
 
 function calculateBaseCharge(aReading){
@@ -120,4 +119,4 @@ test1_2()
 test2_1()
 test3_1()
 
-//run();
+run();
