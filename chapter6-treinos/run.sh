@@ -1,1 +1,1 @@
-node combine_function_into_transform_t1.js
+node combine_functions_into_transform_t2.js
