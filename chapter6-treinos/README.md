@@ -57,11 +57,12 @@ Dados são mais dificeis de manipular do que funções, com funções eu consigo
 4. create a variable baseCharge and move calculation calculateBaseCharge
 5. modify client3 to use new baseCharge Variable
 6. modify client1 call enrichReading
-7. modify client1 to use also baseCharge Variable
-8. modify client2 call enrichReading
-9. modify client2 to use also baseCharge Variable
-10. move taxableCharge calculation inside enrichReading
-11. modify client2 to use new taxableCharge of aReading
+7. modify enrichReading.baseCharge to use round_2places [OK]
+8. modify client1 to use also baseCharge Variable
+9. modify client2 call enrichReading
+10. modify client2 to use also baseCharge Variable
+11. move taxableCharge calculation inside enrichReading
+12. modify client2 to use new taxableCharge of aReading
 
 ## informations - Martin Fowler Patterns
 enrich ==> produce same thing with additional
